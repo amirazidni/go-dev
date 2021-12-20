@@ -1,0 +1,13 @@
+app:
+  port: 4000
+postgres:
+  host: "192.168.100.100"
+  port: 5432
+  dbname: "go_graphql_db"
+  user: postgres
+  password: postgres
+  sslmode: false
+logger:
+  filename: "app.log"
+  format: "text" # or json
+  loglevel: 4 #0: panic, 1:fatal, 2:error, 3:warn, 4:info, 5:debug, 6:trace
