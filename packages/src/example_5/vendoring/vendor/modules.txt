@@ -1,3 +1,0 @@
-# github.com/pioz/faker v1.7.0
-## explicit
-github.com/pioz/faker
