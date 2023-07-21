@@ -1,0 +1,7 @@
+time="2022-08-02T20:40:57+07:00" level=info msg="Hello Logging"
+time="2022-08-02T20:40:57+07:00" level=warning msg="Hello Logging"
+time="2022-08-02T20:40:57+07:00" level=error msg="Hello Logging"
+time="2022-08-02T20:40:57+07:00" level=fatal msg="Fatal log"
+time="2022-08-02T20:41:23+07:00" level=info msg="Hello Logging"
+time="2022-08-02T20:41:23+07:00" level=warning msg="Hello Logging"
+time="2022-08-02T20:41:23+07:00" level=error msg="Hello Logging"
