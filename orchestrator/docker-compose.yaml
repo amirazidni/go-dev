@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+    # docker run -it --rm --name service-hello-v2 -e PORT=8083 -e MYSQL_CONN_STRING="root@tcp(service-mariadb:3306)/docker?parseTime=true" -p 8083:8083 --network my-network go-sql
+    service-hello-v2:
+      build: ./hellov2/
+      environment:
+        - PORT=8083
+        - MYSQL_CONN_STRING="root@tcp(service-mariadb:3306)/docker?parseTime=true"
+      ports:
+        - 8083:8083
+      networks:
+        - my-network
+      depends_on:
+        - service-mariadb
+
+   # docker run -it --name service-mariadb -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -v D:/docker-volume:/var/lib/mysql --network my-network mariadb
+    service-mariadb:
+      image: mariadb
+      environment:
+        - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      ports:
+        - 3306
+      volumes:
+        - D:/docker-volume:/var/lib/mysql
+        - ./mariadb/schema.sql/data/application/init.sql
+      command: --init-file /data/application/init.sql
+      networks:
+        - my-network
+
+networks:
+    my-network:
+
+
+    # docker-compose build
+    # docker-compose up
+    # -d detach (tak perlu pantau terus)
+
+    # docker-compose logs
+    # see log inside
+
+    # docker-compose down
+    # stop
+
